@@ -6,42 +6,42 @@ import { BookOpen, LineChart, FileEdit, CheckCircle2 } from "lucide-react";
 const services = [
   {
     icon: BookOpen,
-    title: "Thesis Tutoring",
-    description: "We can help you choose an interesting research question, identify relevant academic literature, and determine an appropriate research methodology for data collection and analysis.",
+    title: "Research Design",
+    description: "Get help identifying research gaps and developing your methodology",
     features: [
-      "Research question development",
-      "Literature review strategy",
+      "Literature review guidance",
+      "Research question formulation",
       "Methodology selection",
     ],
   },
   {
     icon: LineChart,
-    title: "Data Collection",
-    description: "We can help you collect data from primary (e.g., creating online surveys using Qualtrics) as well as secondary data sources, including Compustat, Thomson Reuters, Datastream, CRSP databases, etc.",
+    title: "Statistical Analysis",
+    description: "Expert support for quantitative and qualitative data analysis",
     features: [
-      "Primary data collection",
-      "Online survey creation (Qualtrics)",
-      "Secondary data sources",
+      "SPSS & R assistance",
+      "Data interpretation",
+      "Results presentation",
     ],
   },
   {
     icon: FileEdit,
-    title: "Data Analysis",
-    description: "We can help you perform (advanced) data analysis based on your research question using various statistical tools, such as SPSS, STATA, EViews, R, and Python.",
+    title: "Writing Support",
+    description: "Improve your academic writing and structure your thesis effectively",
     features: [
-      "SPSS, STATA, EViews",
-      "R and Python programming",
-      "Advanced statistical methods",
+      "Structure planning",
+      "Writing feedback",
+      "Citation guidance",
     ],
   },
   {
     icon: CheckCircle2,
-    title: "Training",
-    description: "We also provide personalized training sessions to elevate your proficiency in academic research, academic writing, advanced data analysis methods, and software proficiency.",
+    title: "Final Review",
+    description: "Ensure your thesis is polished and ready for submission",
     features: [
-      "Academic research training",
-      "Academic writing coaching",
-      "Data analysis methods",
+      "Comprehensive review",
+      "Formatting check",
+      "Quality assurance",
     ],
   },
 ];
@@ -63,10 +63,10 @@ export const ServicesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            How Can We Help You
+            How Can We Help You?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            ScriptieTutor can guide you through the various stages of thesis writing, such as formulating an interesting research question, crafting a research proposal, finding relevant academic literature, gathering data from primary and secondary sources, and employing (advanced) statistical methods for data analysis.
+            Comprehensive thesis support services tailored to your specific needs
           </p>
         </motion.div>
 

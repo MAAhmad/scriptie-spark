@@ -22,10 +22,10 @@ export const AboutSection = () => {
               Our ultimate goal is to ease your thesis writing journey and ensure a successful and timely graduation!
             </p>
             <p className="text-base text-muted-foreground leading-relaxed mb-6">
-              Whether you are having trouble identifying a research gap, figuring out the statistical analyses to best answer your research question, or simply struggling to stay motivated and need that extra push to keep going, we have got you covered. Our personalized assistance is intended to address these challenges and guide you toward consistent progress in your thesis writing journey.
+              Whether you are having trouble identifying a research gap, figuring out the statistical analyses to best answer your research question, or simply struggling to stay motivated and need that extra push to keep going, we have got you covered.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              If you are a bachelor's or master's student facing these challenges and in need of additional assistance, look no further.
+              Our personalized assistance is intended to address these challenges and guide you toward consistent progress in your thesis writing journey.
             </p>
           </motion.div>
 
@@ -37,18 +37,18 @@ export const AboutSection = () => {
             className="space-y-6"
           >
             <Card className="p-8 bg-gradient-primary text-primary-foreground border-0 shadow-medium">
-              <div className="text-5xl font-bold mb-2">0</div>
-              <div className="text-lg opacity-90">Years of Experience</div>
+              <div className="text-5xl font-bold mb-2">10+</div>
+              <div className="text-lg opacity-90">Years of Academic Experience</div>
             </Card>
             
             <Card className="p-8 bg-secondary text-secondary-foreground border-0 shadow-medium">
-              <div className="text-5xl font-bold mb-2">23+</div>
-              <div className="text-lg opacity-90">Happy Students</div>
+              <div className="text-5xl font-bold mb-2">500+</div>
+              <div className="text-lg opacity-90">Successful Thesis Completions</div>
             </Card>
             
             <Card className="p-8 bg-gradient-accent text-accent-foreground border-0 shadow-medium">
-              <div className="text-5xl font-bold mb-2">11%</div>
-              <div className="text-lg opacity-90">Timely Graduation</div>
+              <div className="text-5xl font-bold mb-2">95%</div>
+              <div className="text-lg opacity-90">Student Satisfaction Rate</div>
             </Card>
           </motion.div>
         </div>

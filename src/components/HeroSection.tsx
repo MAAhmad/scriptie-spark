@@ -28,9 +28,9 @@ export const HeroSection = () => {
             </div>
             
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-foreground">
-              Need Help Finishing{" "}
+              Need Help Finishing Your{" "}
               <span className="text-transparent bg-clip-text bg-gradient-primary">
-                Your Thesis?
+                Thesis?
               </span>
             </h1>
             
@@ -59,16 +59,16 @@ export const HeroSection = () => {
 
             <div className="flex flex-wrap gap-8 pt-4">
               <div>
-                <div className="text-3xl font-bold text-foreground">0</div>
-                <div className="text-sm text-muted-foreground">Years of Experience</div>
+                <div className="text-3xl font-bold text-foreground">500+</div>
+                <div className="text-sm text-muted-foreground">Students Helped</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-foreground">23+</div>
-                <div className="text-sm text-muted-foreground">Happy Students</div>
+                <div className="text-3xl font-bold text-foreground">95%</div>
+                <div className="text-sm text-muted-foreground">Success Rate</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-foreground">11%</div>
-                <div className="text-sm text-muted-foreground">Timely Graduation</div>
+                <div className="text-3xl font-bold text-foreground">10+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
             </div>
           </motion.div>

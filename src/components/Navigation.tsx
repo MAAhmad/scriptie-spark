@@ -49,7 +49,7 @@ export const Navigation = () => {
             onClick={() => scrollToSection("contact")}
             className="bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-medium"
           >
-            FREE CONSULTATION
+            Free Consultation
           </Button>
         </div>
       </div>
