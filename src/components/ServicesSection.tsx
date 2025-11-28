@@ -7,41 +7,41 @@ const services = [
   {
     icon: BookOpen,
     title: "Research Design",
-    description: "Get help identifying research gaps and developing your methodology",
+    description: "Clear direction for your research gap and methodology",
     features: [
-      "Literature review guidance",
-      "Research question formulation",
-      "Methodology selection",
+      "Find relevant literature fast",
+      "Sharp research questions",
+      "Choose the right method",
     ],
   },
   {
     icon: LineChart,
     title: "Statistical Analysis",
-    description: "Expert support for quantitative and qualitative data analysis",
+    description: "Get your data analyzed correctly the first time",
     features: [
-      "SPSS & R assistance",
-      "Data interpretation",
-      "Results presentation",
+      "SPSS, R, or Python support",
+      "Understand what tests to use",
+      "Present results clearly",
     ],
   },
   {
     icon: FileEdit,
     title: "Writing Support",
-    description: "Improve your academic writing and structure your thesis effectively",
+    description: "Structure and write chapters that make sense",
     features: [
-      "Structure planning",
-      "Writing feedback",
-      "Citation guidance",
+      "Logical chapter structure",
+      "Direct feedback on drafts",
+      "Proper citations & references",
     ],
   },
   {
     icon: CheckCircle2,
     title: "Final Review",
-    description: "Ensure your thesis is polished and ready for submission",
+    description: "Submit with confidence—no last-minute surprises",
     features: [
-      "Comprehensive review",
-      "Formatting check",
-      "Quality assurance",
+      "Full thesis review",
+      "Check formatting requirements",
+      "Ready for submission",
     ],
   },
 ];
@@ -63,10 +63,10 @@ export const ServicesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            How Can We Help You?
+            What We Do
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive thesis support services tailored to your specific needs
+            Practical support for every stage of your thesis—from start to submission
           </p>
         </motion.div>
 
@@ -121,7 +121,7 @@ export const ServicesSection = () => {
             onClick={scrollToContact}
             className="bg-gradient-accent hover:opacity-90 text-accent-foreground shadow-medium"
           >
-            Get Started Today
+            Schedule a Call
           </Button>
         </motion.div>
       </div>

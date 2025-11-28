@@ -24,19 +24,19 @@ export const HeroSection = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <CheckCircle className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Expert Thesis Support</span>
+              <span className="text-sm font-medium text-primary">Average 3 months faster completion</span>
             </div>
             
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-foreground">
-              Need Help Finishing Your{" "}
+              Stuck on Your Thesis?{" "}
               <span className="text-transparent bg-clip-text bg-gradient-primary">
-                Thesis?
+                Get Unstuck.
               </span>
             </h1>
             
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
-              Get the expert assistance you need to cross the finish line with your thesis. 
-              Let's turn your ideas into a completed, successful project.
+              Direct, practical help from research design to final submission. 
+              No fluff—just concrete guidance to get your thesis done.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -45,7 +45,7 @@ export const HeroSection = () => {
                 onClick={scrollToContact}
                 className="bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-medium text-base group"
               >
-                Request Free Consultation
+                Schedule Free Call
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
@@ -53,18 +53,18 @@ export const HeroSection = () => {
                 variant="outline"
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground text-base"
               >
-                Learn More
+                See How It Works
               </Button>
             </div>
 
             <div className="flex flex-wrap gap-8 pt-4">
               <div>
                 <div className="text-3xl font-bold text-foreground">500+</div>
-                <div className="text-sm text-muted-foreground">Students Helped</div>
+                <div className="text-sm text-muted-foreground">Completed Theses</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-foreground">95%</div>
-                <div className="text-sm text-muted-foreground">Success Rate</div>
+                <div className="text-3xl font-bold text-foreground">24h</div>
+                <div className="text-sm text-muted-foreground">Response Time</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-foreground">10+</div>

@@ -13,19 +13,21 @@ export const AboutSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Graduate Faster with{" "}
+              Graduate On Time with{" "}
               <span className="text-transparent bg-clip-text bg-gradient-primary">
                 ScriptieTutor
               </span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Our ultimate goal is to ease your thesis writing journey and ensure a successful and timely graduation!
+              Straightforward thesis support that gets results. We help you finish without delays.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed mb-6">
-              Whether you are having trouble identifying a research gap, figuring out the statistical analyses to best answer your research question, or simply struggling to stay motivated and need that extra push to keep going, we have got you covered.
+              Stuck identifying a research gap? Can't figure out which statistical test to use? Lost motivation? 
+              We provide concrete solutions—not generic advice.
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              Our personalized assistance is intended to address these challenges and guide you toward consistent progress in your thesis writing journey.
+              Get practical, step-by-step guidance tailored to your specific thesis challenges. 
+              Regular check-ins keep you on track toward your deadline.
             </p>
           </motion.div>
 
@@ -38,17 +40,17 @@ export const AboutSection = () => {
           >
             <Card className="p-8 bg-gradient-primary text-primary-foreground border-0 shadow-medium">
               <div className="text-5xl font-bold mb-2">10+</div>
-              <div className="text-lg opacity-90">Years of Academic Experience</div>
+              <div className="text-lg opacity-90">Years PhD-Level Experience</div>
             </Card>
             
             <Card className="p-8 bg-secondary text-secondary-foreground border-0 shadow-medium">
               <div className="text-5xl font-bold mb-2">500+</div>
-              <div className="text-lg opacity-90">Successful Thesis Completions</div>
+              <div className="text-lg opacity-90">Theses Completed On Time</div>
             </Card>
             
             <Card className="p-8 bg-gradient-accent text-accent-foreground border-0 shadow-medium">
-              <div className="text-5xl font-bold mb-2">95%</div>
-              <div className="text-lg opacity-90">Student Satisfaction Rate</div>
+              <div className="text-5xl font-bold mb-2">3mo</div>
+              <div className="text-lg opacity-90">Average Time Saved</div>
             </Card>
           </motion.div>
         </div>

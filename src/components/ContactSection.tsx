@@ -19,8 +19,8 @@ export const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
+      title: "Got it!",
+      description: "We'll call you within 24 hours to discuss your thesis.",
     });
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
@@ -36,10 +36,10 @@ export const ContactSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Get Your Free Consultation
+            Ready to Start?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to get started? Fill out the form below and we'll be in touch within 24 hours
+            Schedule a free call. We'll discuss your thesis and see if we're a good fit.
           </p>
         </motion.div>
 
@@ -96,7 +96,7 @@ export const ContactSection = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Tell us about your thesis *
+                    What do you need help with? *
                   </label>
                   <Textarea
                     id="message"
@@ -105,7 +105,7 @@ export const ContactSection = () => {
                     required
                     rows={6}
                     className="bg-background border-border resize-none"
-                    placeholder="Briefly describe your thesis topic and what kind of help you need..."
+                    placeholder="E.g., stuck on methodology, need help with SPSS analysis, struggling with literature review..."
                   />
                 </div>
 
@@ -114,7 +114,7 @@ export const ContactSection = () => {
                   size="lg"
                   className="w-full bg-gradient-primary hover:opacity-90 text-primary-foreground shadow-medium"
                 >
-                  Request Free Consultation
+                  Schedule Free Call
                 </Button>
               </form>
             </Card>
@@ -164,9 +164,9 @@ export const ContactSection = () => {
             </Card>
 
             <Card className="p-6 bg-gradient-primary text-primary-foreground border-0 shadow-medium">
-              <h3 className="font-bold text-lg mb-2">Response Time</h3>
+              <h3 className="font-bold text-lg mb-2">24h Response</h3>
               <p className="text-sm opacity-90">
-                We typically respond to all inquiries within 24 hours, often much sooner!
+                You'll hear back within one business day—usually much faster.
               </p>
             </Card>
           </motion.div>

@@ -5,33 +5,33 @@ import { Card } from "@/components/ui/card";
 const features = [
   {
     icon: UserCheck,
-    title: "Expert Instructors",
-    description: "Work with experienced academic professionals who understand thesis requirements",
+    title: "PhD-Level Support",
+    description: "Work with researchers who've been through it—no theoretical advice, just proven strategies",
   },
   {
     icon: Target,
-    title: "Tailored Guidance",
-    description: "Personalized support designed specifically for your research topic and methodology",
+    title: "Your Topic, Your Needs",
+    description: "Customized help for your specific research—not generic templates",
   },
   {
     icon: Zap,
-    title: "Quick Support",
-    description: "Get answers and assistance when you need it most with our responsive service",
+    title: "24h Response",
+    description: "Stuck on something? Get answers fast, not in a week",
   },
   {
     icon: Heart,
-    title: "Motivational Coaching",
-    description: "Stay motivated throughout your journey with encouragement and accountability",
+    title: "Accountability",
+    description: "Regular check-ins keep you moving forward when motivation drops",
   },
   {
     icon: Award,
-    title: "Quality Assurance",
-    description: "Ensure your thesis meets the highest academic standards and requirements",
+    title: "University Standards",
+    description: "Meet your institution's requirements—first time, no revisions",
   },
   {
     icon: Clock,
-    title: "Time Management",
-    description: "Develop effective strategies to complete your thesis on schedule",
+    title: "Hit Your Deadline",
+    description: "Realistic planning and consistent progress tracking so you finish on time",
   },
 ];
 
@@ -47,10 +47,10 @@ export const FeaturesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Why Choose ScriptieTutor?
+            Why ScriptieTutor Works
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our comprehensive support system is designed to help you succeed at every stage of your thesis journey
+            Direct support that gets results—no promises we can't keep
           </p>
         </motion.div>
 
