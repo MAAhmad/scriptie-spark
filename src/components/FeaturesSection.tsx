@@ -37,7 +37,7 @@ const features = [
 
 export const FeaturesSection = () => {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-muted/50 border-t border-border">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,9 +65,9 @@ export const FeaturesSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-medium transition-all duration-300 hover:-translate-y-1 bg-card border-border">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
-                    <Icon className="w-7 h-7 text-primary-foreground" />
+                <Card className="p-8 h-full hover:shadow-medium hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 bg-card border-2 border-border">
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20">
+                    <Icon className="w-7 h-7 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {feature.title}

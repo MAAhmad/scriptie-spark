@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-muted/30">
+    <section id="about" className="py-24 bg-background border-t border-border">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -38,20 +38,27 @@ export const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
-            <Card className="p-8 bg-gradient-primary text-primary-foreground border-0 shadow-medium">
-              <div className="text-5xl font-bold mb-2">10+</div>
-              <div className="text-lg opacity-90">Years PhD-Level Experience</div>
-            </Card>
-            
-            <Card className="p-8 bg-secondary text-secondary-foreground border-0 shadow-medium">
-              <div className="text-5xl font-bold mb-2">500+</div>
-              <div className="text-lg opacity-90">Theses Completed On Time</div>
-            </Card>
-            
-            <Card className="p-8 bg-gradient-accent text-accent-foreground border-0 shadow-medium">
-              <div className="text-5xl font-bold mb-2">3mo</div>
-              <div className="text-lg opacity-90">Average Time Saved</div>
-            </Card>
+            <div className="grid grid-cols-2 gap-4">
+              <Card className="p-6 bg-card border-2 border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="text-4xl font-bold text-primary mb-1">10+</div>
+                <div className="text-sm text-foreground font-medium">Years Experience</div>
+              </Card>
+              
+              <Card className="p-6 bg-card border-2 border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="text-4xl font-bold text-primary mb-1">500+</div>
+                <div className="text-sm text-foreground font-medium">Theses Completed</div>
+              </Card>
+              
+              <Card className="p-6 bg-card border-2 border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="text-4xl font-bold text-primary mb-1">95%</div>
+                <div className="text-sm text-foreground font-medium">Graduate On Time</div>
+              </Card>
+              
+              <Card className="p-6 bg-card border-2 border-primary/20 hover:border-primary/40 transition-colors">
+                <div className="text-4xl font-bold text-primary mb-1">3mo</div>
+                <div className="text-sm text-foreground font-medium">Average Time Saved</div>
+              </Card>
+            </div>
           </motion.div>
         </div>
       </div>
