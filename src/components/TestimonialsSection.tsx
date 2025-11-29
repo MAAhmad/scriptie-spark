@@ -1,84 +1,71 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import { MessageCircle, CheckCircle2, Clock } from "lucide-react";
 
 const testimonials = [
   {
     id: 1,
     name: "Sarah M.",
-    initial: "S",
-    messages: [
-      { type: "student", text: "Hi! I'm really stuck on my methodology section. Can you help?", time: "10:23" },
-      { type: "tutor", text: "Of course! What specific part are you struggling with?", time: "10:24" },
-      { type: "student", text: "I don't know how to justify my research design choices", time: "10:25" },
-      { type: "tutor", text: "No problem. Let's schedule a call and I'll walk you through it step by step. When works for you?", time: "10:26" },
-      { type: "student", text: "Thank you so much! This is exactly what I needed 🙏", time: "10:28" }
-    ]
+    program: "MSc Psychology",
+    size: "large",
+    highlight: "Got unstuck in methodology",
+    quote: "I was completely stuck on my research design. After one call, everything clicked. Finished my thesis 2 months ahead of schedule.",
+    result: "Graduated 2 months early"
   },
   {
     id: 2,
     name: "Michael K.",
-    initial: "M",
-    messages: [
-      { type: "student", text: "Just wanted to say thank you! I passed my thesis defense yesterday 🎉", time: "14:15" },
-      { type: "tutor", text: "Congratulations! That's amazing news! How did it go?", time: "14:16" },
-      { type: "student", text: "Really well! The committee loved my methodology section. Your guidance made all the difference", time: "14:17" },
-      { type: "tutor", text: "I'm so happy to hear that! You did all the hard work. Wishing you all the best! 🎓", time: "14:18" }
-    ]
+    program: "MA Business",
+    size: "small",
+    highlight: "Passed defense first try",
+    quote: "Committee loved my methodology section. Your guidance made all the difference.",
+    result: "8.5 grade"
   },
   {
     id: 3,
     name: "Emma L.",
-    initial: "E",
-    messages: [
-      { type: "student", text: "I'm panicking about my deadline. Can you help me prioritize?", time: "09:30" },
-      { type: "tutor", text: "Absolutely! Let's break this down. What's your deadline?", time: "09:31" },
-      { type: "student", text: "2 weeks. I still need to finish data analysis and write 3 chapters", time: "09:32" },
-      { type: "tutor", text: "We can do this! Let me create a realistic timeline for you. First, let's focus on the analysis - that's the foundation", time: "09:33" },
-      { type: "student", text: "This plan looks manageable. Thank you for calming me down!", time: "09:35" }
-    ]
+    program: "BSc Data Science",
+    size: "medium",
+    highlight: "From panic to plan in 24h",
+    quote: "2 weeks left, 3 chapters unwritten. You created a realistic timeline that actually worked. Graduated on time.",
+    result: "Finished on time"
   },
   {
     id: 4,
     name: "David R.",
-    initial: "D",
-    messages: [
-      { type: "student", text: "Your feedback on my literature review was incredibly helpful", time: "16:45" },
-      { type: "tutor", text: "I'm glad it helped! How are you feeling about the rest of your thesis?", time: "16:46" },
-      { type: "student", text: "Much more confident now. The structure you suggested really clarified everything", time: "16:47" },
-      { type: "tutor", text: "That's great to hear! Keep up the good work 💪", time: "16:48" }
-    ]
+    program: "PhD Sociology",
+    size: "small",
+    highlight: "Structure clarity",
+    quote: "Your literature review feedback clarified everything. Much more confident now.",
+    result: "On track"
   },
   {
     id: 5,
     name: "Lisa T.",
-    initial: "L",
-    messages: [
-      { type: "student", text: "I got my results back - 8.5! I can't believe it!", time: "11:20" },
-      { type: "tutor", text: "Wow, that's fantastic! You should be so proud! 🎉", time: "11:21" },
-      { type: "student", text: "I couldn't have done it without your support. Thank you for everything!", time: "11:22" },
-      { type: "tutor", text: "You did all the work! I just helped guide you. Congratulations on your success 🎓", time: "11:23" }
-    ]
+    program: "MSc Economics",
+    size: "large",
+    highlight: "8.5 final grade",
+    quote: "Couldn't have done it without your support. The statistical analysis guidance was exactly what I needed to push my grade up.",
+    result: "8.5 grade"
   },
   {
     id: 6,
     name: "James P.",
-    initial: "J",
-    messages: [
-      { type: "student", text: "I'm struggling with SPSS. Can you help me understand the output?", time: "13:10" },
-      { type: "tutor", text: "Of course! Send me a screenshot of what you're seeing and I'll explain it", time: "13:11" },
-      { type: "student", text: "This makes so much more sense now! Thank you!", time: "13:25" },
-      { type: "tutor", text: "Happy to help! Let me know if you have any other questions 😊", time: "13:26" }
-    ]
+    program: "MA Education",
+    size: "medium",
+    highlight: "SPSS made simple",
+    quote: "I was drowning in SPSS output. You explained it in a way that finally made sense. Saved me weeks of confusion.",
+    result: "Completed analysis"
   }
 ];
 
 export const TestimonialsSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-background via-secondary/20 to-background relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-background via-primary/5 to-background relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-primary/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/30 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -90,14 +77,15 @@ export const TestimonialsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            What Our Students Say
+            Real Students, Real Results
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real feedback from students who graduated with our help
+            See how we helped students like you graduate on time
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto mb-12">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -105,69 +93,103 @@ export const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`
+                ${testimonial.size === "large" ? "lg:col-span-2 lg:row-span-2" : ""}
+                ${testimonial.size === "medium" ? "lg:col-span-2" : ""}
+                ${testimonial.size === "small" ? "lg:col-span-1" : ""}
+              `}
             >
-              <Card className="overflow-hidden hover:shadow-strong transition-all duration-300 hover:-translate-y-1 bg-card/80 backdrop-blur">
-                {/* WhatsApp-style header */}
-                <div className="bg-primary p-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center font-semibold text-primary-foreground">
-                    {testimonial.initial}
+              <Card className={`
+                h-full p-6 hover:shadow-strong transition-all duration-300 hover:-translate-y-1 
+                bg-gradient-to-br from-card to-card/80 backdrop-blur border-2 hover:border-primary/50
+                ${testimonial.size === "large" ? "p-8" : ""}
+              `}>
+                {/* WhatsApp-style indicator */}
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                    <MessageCircle className="w-4 h-4 text-primary" />
                   </div>
-                  <div>
-                    <div className="font-semibold text-primary-foreground">{testimonial.name}</div>
-                    <div className="text-xs text-primary-foreground/80 flex items-center gap-1">
-                      <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                      online
-                    </div>
+                  <div className="flex-1">
+                    <div className="font-semibold text-foreground">{testimonial.name}</div>
+                    <div className="text-xs text-muted-foreground">{testimonial.program}</div>
                   </div>
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 </div>
 
-                {/* Chat messages */}
-                <div className="p-4 bg-[#e5ddd5] dark:bg-muted/50 min-h-[320px] max-h-[320px] overflow-y-auto space-y-2">
-                  {testimonial.messages.map((message, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, x: message.type === "student" ? -20 : 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: idx * 0.1 }}
-                      className={`flex ${message.type === "student" ? "justify-end" : "justify-start"}`}
-                    >
-                      <div
-                        className={`max-w-[85%] rounded-lg px-3 py-2 ${
-                          message.type === "student"
-                            ? "bg-[#dcf8c6] dark:bg-primary/20"
-                            : "bg-white dark:bg-card"
-                        } shadow-sm`}
-                      >
-                        <p className="text-sm text-foreground leading-relaxed">{message.text}</p>
-                        <span className="text-[10px] text-muted-foreground mt-1 block text-right">
-                          {message.time}
-                        </span>
-                      </div>
-                    </motion.div>
-                  ))}
+                {/* Highlight badge */}
+                <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                  <CheckCircle2 className="w-3 h-3" />
+                  {testimonial.highlight}
                 </div>
+
+                {/* Quote */}
+                <blockquote className={`
+                  text-foreground leading-relaxed mb-4
+                  ${testimonial.size === "large" ? "text-lg" : "text-sm"}
+                `}>
+                  "{testimonial.quote}"
+                </blockquote>
+
+                {/* Result badge */}
+                <div className="flex items-center gap-2 text-sm">
+                  <Clock className="w-4 h-4 text-accent" />
+                  <span className="font-semibold text-accent">{testimonial.result}</span>
+                </div>
+
+                {/* Chat bubble decoration for large cards */}
+                {testimonial.size === "large" && (
+                  <div className="mt-6 p-4 bg-[#dcf8c6] dark:bg-primary/10 rounded-lg rounded-br-none shadow-sm">
+                    <p className="text-sm text-foreground italic">
+                      "This is exactly what I needed. Thank you!"
+                    </p>
+                    <span className="text-xs text-muted-foreground mt-1 block text-right">
+                      WhatsApp conversation
+                    </span>
+                  </div>
+                )}
               </Card>
             </motion.div>
           ))}
         </div>
 
-        {/* CTA at bottom */}
+        {/* Stats bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12"
+        >
+          <Card className="p-6 text-center bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+            <div className="text-3xl font-bold text-primary mb-2">200+</div>
+            <div className="text-sm text-muted-foreground">Students Helped</div>
+          </Card>
+          <Card className="p-6 text-center bg-gradient-to-br from-accent/10 to-accent/5 border-accent/20">
+            <div className="text-3xl font-bold text-accent mb-2">95%</div>
+            <div className="text-sm text-muted-foreground">Graduate On Time</div>
+          </Card>
+          <Card className="p-6 text-center bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+            <div className="text-3xl font-bold text-primary mb-2">24h</div>
+            <div className="text-sm text-muted-foreground">Response Time</div>
+          </Card>
+        </motion.div>
+
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
+          className="text-center"
         >
           <p className="text-lg text-muted-foreground mb-6">
-            Join 200+ students who graduated on time with our support
+            Ready to join them?
           </p>
           <a
             href="#contact"
             className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-strong hover:scale-105"
           >
-            Start Your Free Consultation
+            Schedule Free Consultation
           </a>
         </motion.div>
       </div>
