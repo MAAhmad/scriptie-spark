@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScriptieTutor - Expert Thesis Support for Students</title>
+    <meta name="description" content="Get expert assistance to finish your thesis faster. Professional guidance for bachelor's and master's students. Request your free consultation today.">
+    <meta name="author" content="ScriptieTutor">
+    
+    <meta property="og:title" content="ScriptieTutor - Expert Thesis Support for Students">
+    <meta property="og:description" content="Get expert assistance to finish your thesis faster. Professional guidance for bachelor's and master's students.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background: hsl(210, 40%, 98%);
+            --foreground: hsl(215, 25%, 15%);
+            --card: hsl(0, 0%, 100%);
+            --card-foreground: hsl(215, 25%, 15%);
+            --primary: hsl(180, 85%, 35%);
+            --primary-foreground: hsl(0, 0%, 100%);
+            --secondary: hsl(215, 50%, 25%);
+            --secondary-foreground: hsl(0, 0%, 100%);
+            --muted: hsl(210, 30%, 92%);
+            --muted-foreground: hsl(215, 15%, 45%);
+            --accent: hsl(15, 85%, 62%);
+            --accent-foreground: hsl(0, 0%, 100%);
+            --border: hsl(214, 30%, 88%);
+            --input: hsl(214, 30%, 88%);
+            --radius: 0.75rem;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--foreground);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: hsla(210, 40%, 98%, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 5rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, hsl(180, 85%, 35%), hsl(180, 85%, 45%));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--foreground);
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            background: none;
+            border: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--foreground);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            padding: 0.625rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            font-size: 0.875rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, hsl(180, 85%, 35%), hsl(180, 85%, 45%));
+            color: var(--primary-foreground);
+            box-shadow: 0 8px 24px -4px hsla(215, 25%, 15%, 0.12);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-lg {
+            padding: 0.875rem 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, hsl(15, 85%, 62%), hsl(25, 85%, 65%));
+            color: var(--accent-foreground);
+            box-shadow: 0 8px 24px -4px hsla(215, 25%, 15%, 0.12);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 5rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, var(--background), var(--muted));
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at top right, hsla(180, 85%, 35%, 0.15), transparent 50%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at bottom left, hsla(15, 85%, 62%, 0.1), transparent 50%);
+        }
+
+        .hero-grid {
+            display: grid;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            padding: 4rem 0;
+        }
+
+        @media (min-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background: hsla(180, 85%, 35%, 0.1);
+            border: 1px solid hsla(180, 85%, 35%, 0.2);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 4rem;
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, hsl(180, 85%, 35%), hsl(180, 85%, 45%));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-top: 1rem;
+        }
+
+        .stat-number {
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 16px 48px -8px hsla(215, 25%, 15%, 0.18);
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: -1.5rem;
+            left: -1.5rem;
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 16px 48px -8px hsla(215, 25%, 15%, 0.18);
+            border: 1px solid var(--border);
+        }
+
+        .floating-card-number {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .floating-card-text {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+
+        .bg-muted {
+            background: hsla(210, 30%, 92%, 0.3);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 1024px) {
+            h2 {
+                font-size: 3rem;
+            }
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .card-grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px -4px hsla(215, 25%, 15%, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 0.75rem;
+            background: linear-gradient(135deg, hsl(180, 85%, 35%), hsl(180, 85%, 45%));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-text {
+            color: var(--muted-foreground);
+        }
+
+        .service-card {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, hsl(180, 85%, 35%), hsl(180, 85%, 45%));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: white;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .check-icon {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (min-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .about-text {
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px -4px hsla(215, 25%, 15%, 0.12);
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card-primary {
+            background: linear-gradient(135deg, hsl(180, 85%, 35%), hsl(180, 85%, 45%));
+            color: white;
+        }
+
+        .stat-card-secondary {
+            background: var(--secondary);
+            color: var(--secondary-foreground);
+        }
+
+        .stat-card-accent {
+            background: linear-gradient(135deg, hsl(15, 85%, 62%), hsl(25, 85%, 65%));
+            color: var(--accent-foreground);
+        }
+
+        .stat-card-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card-label {
+            font-size: 1.125rem;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            gap: 2rem;
+            max-width: 75rem;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .form-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--background);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        input:focus, textarea:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px -2px hsla(215, 25%, 15%, 0.08);
+        }
+
+        .contact-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon-primary {
+            background: hsla(180, 85%, 35%, 0.1);
+            color: var(--primary);
+        }
+
+        .contact-icon-accent {
+            background: hsla(15, 85%, 62%, 0.1);
+            color: var(--accent);
+        }
+
+        .contact-icon-secondary {
+            background: hsla(215, 50%, 25%, 0.1);
+            color: var(--secondary);
+        }
+
+        .contact-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-text {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .highlight-card {
+            background: linear-gradient(135deg, hsl(180, 85%, 35%), hsl(180, 85%, 45%));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 24px -4px hsla(215, 25%, 15%, 0.12);
+        }
+
+        .highlight-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-text {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--secondary-foreground);
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-text {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 16px 48px -8px hsla(215, 25%, 15%, 0.18);
+            transform: translateY(200%);
+            transition: transform 0.3s;
+            z-index: 9999;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+        }
+
+        .toast-title {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .toast-description {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">ScriptieTutor</span>
+                </a>
+                
+                <div class="nav-links">
+                    <button class="nav-link" onclick="scrollToSection('hero')">Home</button>
+                    <button class="nav-link" onclick="scrollToSection('services')">Services</button>
+                    <button class="nav-link" onclick="scrollToSection('about')">About</button>
+                    <button class="nav-link" onclick="scrollToSection('contact')">Contact</button>
+                </div>
+
+                <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                    Free Consultation
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <span>Average 3 months faster completion</span>
+                    </div>
+                    
+                    <h1>
+                        Stuck on Your Thesis?
+                        <span class="gradient-text">Get Unstuck.</span>
+                    </h1>
+                    
+                    <p class="hero-text">
+                        Direct, practical help from research design to final submission. 
+                        No fluff—just concrete guidance to get your thesis done.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-lg" onclick="scrollToSection('contact')">
+                            Schedule Free Call
+                            <svg style="display:inline;margin-left:0.5rem;width:20px;height:20px;vertical-align:middle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-outline btn-lg">
+                            See How It Works
+                        </button>
+                    </div>
+
+                    <div class="stats">
+                        <div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Completed Theses</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">24h</div>
+                            <div class="stat-label">Response Time</div>
+                        </div>
+                        <div>
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <img src="src/assets/hero-graduate.jpg" alt="Graduate student celebrating success">
+                    <div class="floating-card">
+                        <div class="floating-card-number">24/7</div>
+                        <div class="floating-card-text">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-muted">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why ScriptieTutor Works</h2>
+                <p class="section-description">
+                    Direct support that gets results—no promises we can't keep
+                </p>
+            </div>
+
+            <div class="card-grid card-grid-3">
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <polyline points="16 11 18 13 22 9"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">PhD-Level Support</h3>
+                    <p class="card-text">Work with researchers who've been through it—no theoretical advice, just proven strategies</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="6"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Your Topic, Your Needs</h3>
+                    <p class="card-text">Customized help for your specific research—not generic templates</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">24h Response</h3>
+                    <p class="card-text">Stuck on something? Get answers fast, not in a week</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Accountability</h3>
+                    <p class="card-text">Regular check-ins keep you moving forward when motivation drops</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="7"/>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">University Standards</h3>
+                    <p class="card-text">Meet your institution's requirements—first time, no revisions</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Hit Your Deadline</h3>
+                    <p class="card-text">Realistic planning and consistent progress tracking so you finish on time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>What We Do</h2>
+                <p class="section-description">
+                    Practical support for every stage of your thesis—from start to submission
+                </p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="service-title">Research Design</h3>
+                            <p class="card-text">Clear direction for your research gap and methodology</p>
+                            <ul class="service-features">
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Find relevant literature fast</span>
+                                </li>
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Sharp research questions</span>
+                                </li>
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Choose the right method</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="20" x2="18" y2="10"/>
+                                <line x1="12" y1="20" x2="12" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="14"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="service-title">Statistical Analysis</h3>
+                            <p class="card-text">Get your data analyzed correctly the first time</p>
+                            <ul class="service-features">
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>SPSS, R, or Python support</span>
+                                </li>
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Understand what tests to use</span>
+                                </li>
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Present results clearly</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="service-title">Writing Support</h3>
+                            <p class="card-text">Structure and write chapters that make sense</p>
+                            <ul class="service-features">
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Logical chapter structure</span>
+                                </li>
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Direct feedback on drafts</span>
+                                </li>
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Proper citations & references</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="service-title">Final Review</h3>
+                            <p class="card-text">Submit with confidence—no last-minute surprises</p>
+                            <ul class="service-features">
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Full thesis review</span>
+                                </li>
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Check formatting requirements</span>
+                                </li>
+                                <li>
+                                    <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                    <span>Ready for submission</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 3rem;">
+                <button class="btn btn-accent btn-lg" onclick="scrollToSection('contact')">
+                    Schedule a Call
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-muted">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <h2>
+                        Graduate On Time with
+                        <span class="gradient-text">ScriptieTutor</span>
+                    </h2>
+                    <p class="about-text">
+                        Straightforward thesis support that gets results. We help you finish without delays.
+                    </p>
+                    <p class="about-text">
+                        Stuck identifying a research gap? Can't figure out which statistical test to use? Lost motivation? 
+                        We provide concrete solutions—not generic advice.
+                    </p>
+                    <p class="about-text">
+                        Get practical, step-by-step guidance tailored to your specific thesis challenges. 
+                        Regular check-ins keep you on track toward your deadline.
+                    </p>
+                </div>
+
+                <div>
+                    <div class="stat-card stat-card-primary">
+                        <div class="stat-card-number">10+</div>
+                        <div class="stat-card-label">Years PhD-Level Experience</div>
+                    </div>
+                    
+                    <div class="stat-card stat-card-secondary">
+                        <div class="stat-card-number">500+</div>
+                        <div class="stat-card-label">Theses Completed On Time</div>
+                    </div>
+                    
+                    <div class="stat-card stat-card-accent">
+                        <div class="stat-card-number">3mo</div>
+                        <div class="stat-card-label">Average Time Saved</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Start?</h2>
+                <p class="section-description">
+                    Schedule a free call. We'll discuss your thesis and see if we're a good fit.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div>
+                    <div class="card">
+                        <form id="contactForm" onsubmit="handleSubmit(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">What do you need help with? *</label>
+                                <textarea id="message" name="message" rows="6" required placeholder="E.g., stuck on methodology, need help with SPSS analysis, struggling with literature review..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                                Schedule Free Call
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="contact-card">
+                        <div class="contact-icon contact-icon-primary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="contact-title">Email Us</h3>
+                            <p class="contact-text">info@scriptietutor.nl</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon contact-icon-accent">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="contact-title">Call Us</h3>
+                            <p class="contact-text">+31 6 1234 5678</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon contact-icon-secondary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="contact-title">Location</h3>
+                            <p class="contact-text">Amsterdam, Netherlands</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-card">
+                        <h3 class="highlight-title">24h Response</h3>
+                        <p class="highlight-text">
+                            You'll hear back within one business day—usually much faster.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">ScriptieTutor</span>
+                </a>
+                
+                <p class="footer-text">
+                    © 2024 ScriptieTutor. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-title">Got it!</div>
+        <div class="toast-description">We'll call you within 24 hours to discuss your thesis.</div>
+    </div>
+
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            showToast();
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>
