@@ -36,6 +36,11 @@ const features = [
 ];
 
 export const FeaturesSection = () => {
+  const scrollToServices = () => {
+    const element = document.getElementById("services");
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
@@ -65,7 +70,10 @@ export const FeaturesSection = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="p-8 h-full hover:shadow-medium transition-all duration-300 hover:-translate-y-1 bg-card border-border">
+                <Card 
+                  className="p-8 h-full hover:shadow-medium transition-all duration-300 hover:-translate-y-1 bg-card border-border cursor-pointer"
+                  onClick={scrollToServices}
+                >
                   <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center mb-6">
                     <Icon className="w-7 h-7 text-primary-foreground" />
                   </div>

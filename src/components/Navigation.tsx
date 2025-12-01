@@ -40,16 +40,16 @@ export const Navigation = () => {
               Services
             </button>
             <button 
-              onClick={() => navigate("/data-analysis")}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-            >
-              Data Analysis
-            </button>
-            <button 
               onClick={() => scrollToSection("about")}
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               About
+            </button>
+            <button 
+              onClick={() => navigate("/pricing")}
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            >
+              Pricing
             </button>
             <button 
               onClick={() => scrollToSection("contact")}
