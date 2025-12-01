@@ -1,10 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { GraduationCap } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
+    } else {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -30,6 +38,12 @@ export const Navigation = () => {
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
               Services
+            </button>
+            <button 
+              onClick={() => navigate("/data-analysis")}
+              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            >
+              Data Analysis
             </button>
             <button 
               onClick={() => scrollToSection("about")}
