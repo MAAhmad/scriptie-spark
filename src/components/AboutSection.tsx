@@ -37,19 +37,20 @@ export const AboutSection = () => {
             className="space-y-6"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Many students get stuck with their thesis. Maybe you don't know which research 
-              question to ask, or you're struggling with statistical analyses. Maybe you're just 
-              losing motivation and need that extra push to keep going.
+              <span className="font-semibold text-foreground">Deadline approaching but your thesis isn't?</span> You're not alone. 
+              Whether it's a vague research question, confusing statistics, or just complete writer's block—these 
+              are the exact problems I've helped hundreds of students solve.
             </p>
             
             <p className="text-lg text-foreground font-semibold leading-relaxed">
-              We help you at every step. From research question to data analysis. Personal 
-              guidance that helps you make consistent progress.
+              I've guided students from UvA, VU Amsterdam, Erasmus University, Tilburg University, 
+              Radboud, and more to successfully complete their theses—often months ahead of schedule.
             </p>
             
             <p className="text-muted-foreground leading-relaxed">
-              Are you a bachelor's or master's student facing these challenges? Then 
-              ScriptieTutor is the right place for you.
+              No more staring at a blank page. No more confusing feedback loops with supervisors. 
+              Just clear, practical guidance that gets your thesis done. <span className="font-medium text-foreground">Book a free call 
+              and let's get you graduated.</span>
             </p>
           </motion.div>
 
