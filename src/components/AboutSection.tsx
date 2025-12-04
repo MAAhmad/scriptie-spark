@@ -37,20 +37,20 @@ export const AboutSection = () => {
             className="space-y-6"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              <span className="font-semibold text-foreground">Deadline approaching but your thesis isn't?</span> You're not alone. 
-              Whether it's a vague research question, confusing statistics, or just complete writer's block—these 
-              are the exact problems I've helped hundreds of students solve.
+              <span className="font-semibold text-foreground">Been putting off your thesis for months?</span> You're not alone. 
+              Most of my students are working professionals who delayed their thesis because of jobs, internships, 
+              or life getting in the way. Now the deadline is real—and the pressure is on.
             </p>
             
             <p className="text-lg text-foreground font-semibold leading-relaxed">
-              I've guided students from UvA, VU Amsterdam, Erasmus University, Tilburg University, 
-              Radboud, and more to successfully complete their theses—often months ahead of schedule.
+              That's exactly why I offer a hassle-free service: hand me your thesis, and I'll guide you 
+              to graduation. Students from UvA, VU Amsterdam, Erasmus, Tilburg, and Radboud have all 
+              finished with my help—even after months of delay.
             </p>
             
             <p className="text-muted-foreground leading-relaxed">
-              No more staring at a blank page. No more confusing feedback loops with supervisors. 
-              Just clear, practical guidance that gets your thesis done. <span className="font-medium text-foreground">Book a free call 
-              and let's get you graduated.</span>
+              No complicated processes. No endless back-and-forth. Just give me your project, follow my guidance, 
+              and get it done. <span className="font-medium text-foreground">Book a free call and let's get you graduated—finally.</span>
             </p>
           </motion.div>
 
