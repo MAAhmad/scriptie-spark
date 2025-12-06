@@ -1,83 +1,113 @@
 import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
 
 export const AboutSection = () => {
-  const stats = [
-    { value: "200+", label: "students helped", color: "bg-[hsl(174,60%,45%)]" },
-    { value: "95%", label: "Graduate On Time", color: "bg-[hsl(220,45%,30%)]" },
-    { value: "5+", label: "years of experience", color: "bg-[hsl(15,70%,60%)]" },
-  ];
-
   return (
-    <section id="about" className="py-20 bg-muted/40">
+    <section id="about" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Centered Header */}
+        {/* Editorial Header */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Graduate on Time with ScriptieTutor
+          <span className="text-primary font-medium tracking-widest uppercase text-sm mb-4 block">
+            About ScriptieTutor
+          </span>
+          <h2 className="text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6">
+            Graduate on Time.
+            <br />
+            <span className="text-muted-foreground">Finally.</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Stop procrastinating. Start today and graduate on time.
-          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left: Compelling Text */}
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+          {/* Left Column - Main Text */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="lg:col-span-7 space-y-8"
           >
+            <p className="text-xl lg:text-2xl text-foreground leading-relaxed font-medium">
+              Been putting off your thesis for months? You're not alone. Most of my 
+              students are working professionals who delayed their thesis because of 
+              jobs, internships, or life getting in the way.
+            </p>
+            
             <p className="text-lg text-muted-foreground leading-relaxed">
-              <span className="font-semibold text-foreground">Been putting off your thesis for months?</span> You're not alone. 
-              Most of my students are working professionals who delayed their thesis because of jobs, internships, 
-              or life getting in the way. Now the deadline is real—and the pressure is on.
+              Now the deadline is real—and the pressure is on. That's exactly why I 
+              offer a hassle-free service: hand me your thesis, and I'll guide you 
+              to graduation. Students from <span className="text-foreground font-medium">UvA, VU Amsterdam, Erasmus, 
+              Tilburg, and Radboud</span> have all finished with my help—even after 
+              months of delay.
             </p>
-            
-            <p className="text-lg text-foreground font-semibold leading-relaxed">
-              That's exactly why I offer a hassle-free service: hand me your thesis, and I'll guide you 
-              to graduation. Students from UvA, VU Amsterdam, Erasmus, Tilburg, and Radboud have all 
-              finished with my help—even after months of delay.
-            </p>
-            
-            <p className="text-muted-foreground leading-relaxed">
-              No complicated processes. No endless back-and-forth. Just give me your project, follow my guidance, 
-              and get it done. <span className="font-medium text-foreground">Book a free call and let's get you graduated—finally.</span>
-            </p>
+
+            <div className="pt-4">
+              <p className="text-lg text-muted-foreground leading-relaxed border-l-2 border-primary pl-6">
+                No complicated processes. No endless back-and-forth. Just give me 
+                your project, follow my guidance, and get it done.
+              </p>
+            </div>
           </motion.div>
 
-          {/* Right: Stats Cards */}
+          {/* Right Column - Stats */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-4"
+            className="lg:col-span-5 flex flex-col justify-center"
           >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-              >
-                <Card className={`p-6 ${stat.color} border-0 shadow-lg rounded-xl`}>
-                  <div className="text-4xl lg:text-5xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-base text-white/90">{stat.label}</div>
-                </Card>
-              </motion.div>
-            ))}
+            <div className="space-y-10">
+              {/* Stat 1 */}
+              <div className="border-b border-border pb-8">
+                <div className="text-6xl lg:text-7xl font-bold text-primary mb-2">
+                  200+
+                </div>
+                <div className="text-lg text-muted-foreground uppercase tracking-wide">
+                  Students Helped
+                </div>
+              </div>
+
+              {/* Stat 2 */}
+              <div className="border-b border-border pb-8">
+                <div className="text-6xl lg:text-7xl font-bold text-foreground mb-2">
+                  95%
+                </div>
+                <div className="text-lg text-muted-foreground uppercase tracking-wide">
+                  Graduate On Time
+                </div>
+              </div>
+
+              {/* Stat 3 */}
+              <div>
+                <div className="text-6xl lg:text-7xl font-bold text-muted-foreground mb-2">
+                  5+
+                </div>
+                <div className="text-lg text-muted-foreground uppercase tracking-wide">
+                  Years of Experience
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 pt-12 border-t border-border"
+        >
+          <p className="text-xl text-foreground font-medium">
+            Book a free call and let's get you graduated—finally.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
